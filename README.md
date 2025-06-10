@@ -1,135 +1,98 @@
-JALDARPAN
+# JALDARPAN
 
 This repository contains a machine learning-based forecasting system designed to predict water demand and optimize distribution in rural and urban regions. The system integrates time-series analysis with deep learning models to support sustainable and efficient water management.
 
-Table of Contents
-Project Overview
+## Table of Contents
 
-Objectives
+- [Project Overview](#project-overview)  
+- [Objectives](#objectives)  
+- [Methodology](#methodology)  
+- [Data Sources and Preprocessing](#data-sources-and-preprocessing)  
+- [Model Architecture](#model-architecture)  
+- [Deployment](#deployment)  
+- [Results and Visualizations](#results-and-visualizations)  
+- [Future Work](#future-work)  
+- [References](#references)  
 
-Methodology
+## Project Overview
 
-Data Sources and Preprocessing
-
-Model Architecture
-
-Deployment
-
-Results and Visualizations
-
-Future Work
-
-References
-
-Project Overview
 Accurate forecasting of water demand is essential to ensure efficient and equitable distribution of water resources. This project focuses on leveraging historical, environmental, and real-time sensor data to predict water consumption patterns using machine learning techniques. It aims to address challenges related to water scarcity, operational inefficiencies, and environmental conservation.
 
-Objectives
+## Objectives
+
 The main goals of the project are:
 
-Predict short-term and long-term water demand using historical and real-time data.
+1. Predict short-term and long-term water demand using historical and real-time data.
+2. Optimize water distribution networks by aligning supply with demand forecasts.
+3. Support sustainable resource use and reduce wastage.
+4. Increase resilience to climate-related disruptions.
+5. Minimize financial risks and operational costs.
+6. Foster trust through reliable and transparent predictions.
 
-Optimize water distribution networks by aligning supply with demand forecasts.
+## Methodology
 
-Support sustainable resource use and reduce wastage.
-
-Increase resilience to climate-related disruptions.
-
-Minimize financial risks and operational costs.
-
-Foster trust through reliable and transparent predictions.
-
-Methodology
 The system uses Long Short-Term Memory (LSTM) networks to process sequential time-series data for demand forecasting. The process includes:
 
-Data preprocessing and normalization
+- Data preprocessing and normalization
+- Time-series windowing
+- Model training and evaluation
+- Real-time prediction dashboard deployment using Flask and Plotly
 
-Time-series windowing
+## Data Sources and Preprocessing
 
-Model training and evaluation
+**Data Types Used:**
 
-Real-time prediction dashboard deployment using Flask and Plotly
+- Historical water consumption records
+- Weather variables (rainfall, humidity, temperature)
+- Population and socio-economic data
+- Seasonal trends
+- IoT and sensor-based real-time water usage data
 
-Data Sources and Preprocessing
-Data Types Used:
+**Preprocessing Steps:**
 
-Historical water consumption records
+- Handling missing values with imputation
+- Normalization using MinMaxScaler
+- Feature engineering (e.g., demand per capita, seasonal demand ratios)
+- Time-series formatting for sequence input
 
-Weather variables (rainfall, humidity, temperature)
+## Model Architecture
 
-Population and socio-economic data
-
-Seasonal trends
-
-IoT and sensor-based real-time water usage data
-
-Preprocessing Steps:
-
-Handling missing values with imputation
-
-Normalization using MinMaxScaler
-
-Feature engineering (e.g., demand per capita, seasonal demand ratios)
-
-Time-series formatting for sequence input
-
-Model Architecture
 The predictive model is based on an LSTM neural network optimized for time-series data:
 
-Two LSTM layers with 100 neurons each
-
-Dense output layers
-
-Optimizer: Adam
-
-Loss function: Mean Squared Error (MSE)
-
-Epochs: 100
-
-Batch size: 16
+- Two LSTM layers with 100 neurons each
+- Dense output layers
+- Optimizer: Adam
+- Loss function: Mean Squared Error (MSE)
+- Epochs: 100
+- Batch size: 16
 
 The model was trained on 80% of the data and tested on the remaining 20%.
 
-Deployment
+## Deployment
+
 An interactive web dashboard is built using Flask and Plotly. It allows users to:
 
-Upload new data
+- Upload new data
+- Visualize real-time predictions
+- Compare predicted vs actual consumption
 
-Visualize real-time predictions
+## Results and Visualizations
 
-Compare predicted vs actual consumption
+- Plots show close alignment between actual and predicted water demand values.
+- Training and validation loss graphs indicate model convergence.
+- Groundwater level trends, dam storage capacity, and seasonal availability are visualized for regions like Sehore, Madhya Pradesh.
 
-Results and Visualizations
-Plots show close alignment between actual and predicted water demand values.
+## Future Work
 
-Training and validation loss graphs indicate model convergence.
+- Incorporate additional features like temperature and population projections.
+- Experiment with alternative models (e.g., GRU, Transformer networks).
+- Deploy the system on cloud platforms (AWS, GCP) for scalability.
+- Perform hyperparameter optimization using automated search methods.
 
-Groundwater level trends, dam storage capacity, and seasonal availability are visualized for regions like Sehore, Madhya Pradesh.
+## References
 
-Future Work
-Incorporate additional features like temperature and population projections.
-
-Experiment with alternative models (e.g., GRU, Transformer networks).
-
-Deploy the system on cloud platforms (AWS, GCP) for scalability.
-
-Perform hyperparameter optimization using automated search methods.
-
-References
-The system is based on research from academic papers and tools from the Python ecosystem including:
-
-Hochreiter and Schmidhuber, LSTM (1997)
-
-Jason Brownlee, Deep Learning for Time Series Forecasting
-
-François Chollet, Deep Learning with Python
-
-TensorFlow and Keras frameworks
-
-Python libraries: NumPy, Pandas, Matplotlib, Scikit-learn, Plotly
-
-Groundwater and rainfall data from CGWB and IMD
-
-Kaggle water consumption datasets
-
-For a complete list of sources, refer to the References section in the report.
+- Hochreiter and Schmidhuber, "Long Short-Term Memory", Neural Computation, 1997
+- Jason Brownlee, "Deep Learning for Time Series Forecasting"
+- François Chollet, "Deep Learning with Python", Manning Publications
+- TensorFlow, Keras, Scikit-learn, NumPy, Pandas, Matplotlib, Plotly
+- Data from Kaggle, IMD, CGWB, and Ministry of Jal Shakti
