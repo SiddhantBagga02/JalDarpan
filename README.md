@@ -1,3 +1,5 @@
+JALDARPAN
+
 This repository contains a machine learning-based forecasting system designed to predict water demand and optimize distribution in rural and urban regions. The system integrates time-series analysis with deep learning models to support sustainable and efficient water management.
 
 Table of Contents
